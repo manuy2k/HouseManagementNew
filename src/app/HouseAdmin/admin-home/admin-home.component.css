@@ -1,0 +1,23 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.headerClass{
+    background-color:#0059b3;
+    width: 100%;
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+
+.logoutButton{
+    float: right;
+    background-color: #B7950B;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 4px;
+    transition-duration: 0.4s;
+
+}
+
+.logoutButton:hover{
+    background-color: #F7DC6F
+}

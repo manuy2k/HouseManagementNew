@@ -1,0 +1,83 @@
+@import "~bootstrap/dist/css/bootstrap.min.css"; 
+.headerStyle{
+    background-color: #0059b3;
+}
+
+
+.loginClass{
+    float: right;
+    clear: both;
+    padding-top: 20px; 
+    padding-right: 20px;
+    color: white;
+    font-weight: 100;
+    font-family: 'ABeeZee';
+    font-size: 14px;
+}
+
+.loginClass .inProp{
+    border-radius: 4px;
+}
+
+
+.loginButton{
+    transition-duration: 0.5s;
+    cursor: pointer;
+    background-color: #0059b3;
+    border-radius: 4px;
+    border: 2px solid white;
+    color: white;
+}
+
+.loginButton:hover{
+    background-color: white;
+    color: black;
+}
+
+input:focus {
+    box-shadow: 0 0 7px rgb(255, 255, 255);
+  }
+/* .bgClass{
+    background-image: linear-gradient(90deg, rgba(255,0,0,0), rgb(215, 233, 250));
+} */
+
+.main_body{
+    /* height: 537px;
+    width: 1348px; */
+    /* background-image: url("/assets/images/landingCompProps/background.jpg"); */
+    
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg, 
+                rgba(2,0,36,0.9220063025210083) 0%, 
+                rgba(224,224,255,1) 49%, 
+                rgba(202,237,244,0.9556197478991597) 100%);
+    
+}
+
+/* .leftest{    
+    margin:10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    /* height: 520px;
+    width: 400px; 
+    background-color: cornsilk;
+} */
+
+
+/* .footerStyle{
+    position: absolute;
+    width: 100%;
+    background-color: #999999;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    height:30px;
+} */
+/* 
+.footerStyle .hLink{
+    color: white;
+    padding: 5px;
+    
+} */
+
+

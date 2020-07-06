@@ -1,0 +1,39 @@
+<header class="headerStyle">
+  <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <img src="assets/images/logo.png" alt="App Logo" width="70px" height="70px">
+  <img src="assets/images/app_name.png" alt="App Name" width="220px" height="70px">
+  
+  <div class="loginClass">
+    <label for="login_id">Login ID</label> &nbsp;
+    <input type="text" class="inProp" name="login_id"> &nbsp;&nbsp;&nbsp;
+    <label for="password_id">Password</label> &nbsp;
+    <input type="text" class="inProp" name="password_id">&nbsp;&nbsp;&nbsp;
+    <button class="loginButton" routerLink="/adminMode/homePage" (click)="doProcessReq()">Login</button>
+  </div> 
+</header>
+
+<body class="main_body">
+ <div class="row">
+   <div class="col-5"></div>
+   <div class="col-6">
+    <app-clform> </app-clform>
+   </div>
+   
+  
+ </div>
+</body>
+<!-- 
+<footer class="footerStyle">
+  <div class="hLinkTwo">
+    <a class="hLink" href="#">Quick Links</a> &nbsp;
+    <a class="hLink" href="#">Useful Information</a> &nbsp;
+    <a class="hLink" href="#">Contact Us</a> &nbsp;
+    <a class="hLink" href="#">Report an issue</a> &nbsp;
+    <a class="hLink" href="#">Privacy</a> &nbsp;
+    <a class="hLink" href="#">Settings</a> &nbsp;
+  </div>
+  
+</footer>
+ -->
