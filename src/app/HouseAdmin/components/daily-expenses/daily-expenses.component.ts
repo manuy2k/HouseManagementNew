@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { exit } from 'process';
 
 @Component({
   selector: 'app-daily-expenses',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DailyExpensesComponent implements OnInit {
 
+  itemsCount: number = 0;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  IncDec(val){
+    if(val==1){
+      this.itemsCount++;
+      console.log("Increment");
+    }
+      
+    if(val==0){
+      if(this.itemsCount==0)
+      return;
+      this.itemsCount--;
+      console.log("Decrement");
+    }
+      
   }
 
 }
