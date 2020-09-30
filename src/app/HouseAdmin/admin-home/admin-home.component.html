@@ -1,10 +1,10 @@
 <div class="headerClass">
-  <img src="./assets/images/logo.png" height="70px" width="70px" alt="App_Logo" style="margin:0">
-  <img src="./assets/images/app_name.png" height="70px" width="200px" alt="App_Name" style="margin:0">
-  <button class="logoutButton" routerLink=" ">Logout</button>  
+  <img src="./assets/images/logo.png" height="70px" width="70px" alt="App_Logo" style="margin:0" routerLink="/adminMode/homePage">
+  <img src="./assets/images/app_name.png" height="70px" width="200px" alt="App_Name" style="margin:0" routerLink="/adminMode/homePage">
+  <button class="logoutButton" routerLink="/">Logout</button>  
 </div>
 
-<div class="row" style="padding-top: 20px;">  
+<div class="row" >  
   <div class="col-3" style="margin-left: 20px; margin-top: 20px;">
     <button type="button" (click)="loadComponents(1)" routerLink='budgetPlan'
       class="btn btn-outline-primary btn-block btn-sm">Budget Plan</button>
@@ -20,7 +20,7 @@
     
   
 
-  <div class="col-6">
+  <div class="col-6" style="padding-top: 20px;">
     <router-outlet></router-outlet>
   </div>
   <div class="col-3"></div>

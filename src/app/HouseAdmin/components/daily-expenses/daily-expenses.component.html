@@ -1,66 +1,78 @@
-<h4>Your spendings</h4>  
-          <button class="btn btn-outline-primary btn-sm" style="float: left;">Last week</button>                  
-          <button class="btn btn-outline-primary btn-sm" style="float:right">Next week</button>
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table>
-          <h4>Add Item</h4>
-          <form>
-            <div class="form-group">
-              <label for="itemName">Item Name</label>
-              <input type="email" class="form-control" id="itemName">
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect1">Category</label>
-              <select class="form-control" id="exampleFormControlSelect1">
-                <option>Groceries</option>
-                <option>Pantrys</option>
-                <option>Edibles</option>
-                <option>Furnitures/Comfortables</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlSelect2">Items Count</label>
-              <button type="button" class="btn btn-outline-dark btn-sm" (click)="IncDec(1)">+</button>
-                {{ itemsCount}}
-              <button type="button" class="btn btn-outline-dark btn-sm" (click)="IncDec(0)">-</button>
-            </div>
-            <div class="form-group">
-              <label for="exampleFormControlTextarea1">Description</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="cost">Item Cost</label>
-              <input type="text" class="form-control" id="cost">
-            </div>
-            <button class="btn btn-outline-primary btn-sm btn-block">Submit</button>
-            <button class="btn btn-outline-warning btn-sm btn-block">Reset</button>
-          </form>
+<button class="btn btn-outline-dark btn-sm" 
+        style="float:right; display: block; margin-bottom: 15px;"
+        (click)="tableHider()" *ngIf=tableToggler>Hide</button>
+<button class="btn btn-outline-dark btn-sm" 
+        style="float:right; display: block; margin-bottom: 15px;"
+        (click)="tableHider()" *ngIf=!tableToggler>Show</button>     
+
+<div style="margin-top: 50px;">
+  <div *ngIf=tableToggler>
+    <h4 style="display: inline; text-align: center; padding-left: 155px;">Your spendings</h4>  
+    <button class="btn btn-outline-primary btn-sm" style="float: left;">Last week</button>                  
+    <button class="btn btn-outline-primary btn-sm" style="float:right">Next week</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>        
+            <h4>Add Item</h4>
+            <form>
+              <div class="form-group">
+                <label for="itemName">Item Name</label>
+                <input type="email" class="form-control" id="itemName">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Category</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Groceries</option>
+                  <option>Pantrys</option>
+                  <option>Edibles</option>
+                  <option>Furnitures/Comfortables</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlSelect2">Items Count: </label> &nbsp;
+                <button type="button" class="btn btn-outline-dark btn-sm" (click)="IncDec(1)">+</button>
+                 &nbsp; {{ itemsCount}} &nbsp;
+                <button type="button" class="btn btn-outline-dark btn-sm" (click)="IncDec(0)">-</button>
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="cost">Item Cost</label>
+                <input type="text" class="form-control" id="cost">
+              </div>
+              <button class="btn btn-primary btn-sm">Submit</button> &nbsp;
+              <button class="btn btn-warning btn-sm">Reset</button>
+            </form>
+</div>        

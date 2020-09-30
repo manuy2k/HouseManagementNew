@@ -16,7 +16,8 @@ const routes: Routes = [
       { path: 'dailyExpenses', component: DailyExpensesComponent },
       { path: 'raiseCapital', component: RaiseCapitalComponent },
       { path: 'upcoming', component: UpcomingEventsComponent },
-      { path: 'manageRoles', component: ManageRolesComponent }
+      { path: 'manageRoles', component: ManageRolesComponent },
+      { path: '', component: DashBoardComponent }
     ]  
   }
 ]

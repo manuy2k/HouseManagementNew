@@ -9,9 +9,14 @@ import { exit } from 'process';
 export class DailyExpensesComponent implements OnInit {
 
   itemsCount: number = 0;
+  tableToggler: boolean = true;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  tableHider(){
+    this.tableToggler = !this.tableToggler;
   }
 
   IncDec(val){
