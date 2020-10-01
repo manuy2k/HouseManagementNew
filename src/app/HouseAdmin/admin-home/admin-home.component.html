@@ -1,11 +1,13 @@
 <div class="headerClass">
   <img src="./assets/images/logo.png" height="70px" width="70px" alt="App_Logo" style="margin:0" routerLink="/adminMode/homePage">
   <img src="./assets/images/app_name.png" height="70px" width="200px" alt="App_Name" style="margin:0" routerLink="/adminMode/homePage">
-  <button class="logoutButton" routerLink="/">Logout</button>  
+  <button class="logoutButton" routerLink="/">Logout</button>
 </div>
 
-<div class="row" >  
+<div class="row" >
   <div class="col-3" style="margin-left: 20px; margin-top: 20px;">
+    <button type="button" (click)="loadComponents(0)" routerLink='homePage'
+      class="btn btn-outline-primary btn-block btn-sm">Home</button>
     <button type="button" (click)="loadComponents(1)" routerLink='budgetPlan'
       class="btn btn-outline-primary btn-block btn-sm">Budget Plan</button>
     <button type="button" (click)="loadComponents(2)" routerLink='dailyExpenses'
@@ -15,13 +17,10 @@
     <button type="button" (click)="loadComponents(4)" routerLink='upcoming'
       class="btn btn-outline-primary btn-block btn-sm">Upcoming Events</button>
     <button type="button" (click)="loadComponents(5)" routerLink='manageRoles'
-      class="btn btn-outline-primary btn-block btn-sm">Manage Roles</button>
+      class="btn btn-outline-primary btn-block btn-sm">Room Mates</button>
   </div>
-    
-  
 
-  <div class="col-6" style="padding-top: 20px;">
+  <div class="col-8" style="padding-top: 20px; margin-right: 20px;">
     <router-outlet></router-outlet>
   </div>
-  <div class="col-3"></div>
 </div>

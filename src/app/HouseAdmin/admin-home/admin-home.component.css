@@ -2,10 +2,10 @@
 
 .headerClass{
     background-color:#0059b3;
-    width: 100%;
+    width: auto;
     clear: both;
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
 }
 
 .logoutButton{

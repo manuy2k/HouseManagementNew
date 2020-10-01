@@ -1,46 +1,27 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Name</th>
-      <th scope="col">Edit Role</th>
-      <th scope="col">Delete</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>ABC</td>
-      <td>
-        <button type="button" class="btn btn-outline-primary btn-sm btn-block">Make Admin</button>
-      </td>
-      <td>
-        <button type="button" class="btn btn-outline-danger btn-sm btn-block">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>ABC</td>
-      <td>
-        <button type="button" class="btn btn-outline-primary btn-sm btn-block">Make Admin</button>
-      </td>
-      <td>
-        <button type="button" class="btn btn-outline-danger btn-sm btn-block">Delete</button>
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>ABC</td>
-      <td>
-        <button type="button" class="btn btn-outline-primary btn-sm btn-block">Make Admin</button>
-      </td>
-      <td>
-        <button type="button" class="btn btn-outline-danger btn-sm btn-block">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div *ngFor="let values of _newData">
+  <mat-card class="example-card" style="background-color:#fffaeb">
+    <img mat-card-image src="./assets/images/AdminModule/profileDp.jpg" style="height: 150px; width: 150px;">
+    <mat-card-content>
+      <p>{{ values.firstName}} {{ values.lastName}}</p>
+      <p>{{ values.role }} </p>
+      <p>{{ values.phone }} </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <mat-icon
+        color="primary"
+        matTooltip="Edit"
+        (click)="doSomething()">edit</mat-icon>
+      &nbsp;
+      <mat-icon color="warn"
+        (click)="doSomething()"
+        matTooltip="Delete">delete</mat-icon> &nbsp;
+      <mat-icon color="primary"
+      (click)="doSomething()"
+      matTooltip="Change Role">autorenew</mat-icon>
+    </mat-card-actions>
+  </mat-card>
 
-<hr>
 
-<p class="lead">*To remove yourself from admin make someone else admin</p>
+</div>
+
+

@@ -1,4 +1,8 @@
+
+import { Dataformat } from './../../dataformat';
+import { UserDataListService } from './../../../Services/user-data-list.service';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-manage-roles',
@@ -7,9 +11,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageRolesComponent implements OnInit {
 
-  constructor() { }
+  public _newData: Dataformat[];
+  constructor(public dataSer: UserDataListService) { }
 
   ngOnInit() {
+    this._newData = this.dataSer.getData();
+    this.dataSer.getLiveData().subscribe((temp: Dataformat[])=> {
+      this._newData = temp;
+      console.log("Printing from observable",temp);
+    })
+  }
+
+  doSomething(){
+    console.log("Hello Detective");
   }
 
 }

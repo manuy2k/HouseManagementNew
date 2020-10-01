@@ -1,3 +1,4 @@
+import { MaterialFilesModule } from './../material-files.module';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { NgModule } from '@angular/core';
@@ -12,13 +13,14 @@ import { DashBoardComponent } from './components/dash-board/dash-board.component
 const routes: Routes = [
   { path: 'homePage', component: AdminHomeComponent,
     children:[
+      { path: 'homePage', component: DashBoardComponent },
       { path: 'budgetPlan', component: BudgetPlanComponent },
       { path: 'dailyExpenses', component: DailyExpensesComponent },
       { path: 'raiseCapital', component: RaiseCapitalComponent },
       { path: 'upcoming', component: UpcomingEventsComponent },
       { path: 'manageRoles', component: ManageRolesComponent },
       { path: '', component: DashBoardComponent }
-    ]  
+    ]
   }
 ]
 @NgModule({
@@ -33,6 +35,7 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
+    MaterialFilesModule,
     RouterModule.forChild(routes)
   ]
 })
