@@ -21,3 +21,10 @@
   border:1px solid black;
 }
 
+.editCl{
+  float: left;
+}
+
+.delCl{
+  float: right;
+}

@@ -10,11 +10,12 @@
       <p>{{ values.phone }} </p>
     </mat-card-content>
     <mat-card-actions>
-      <mat-icon
+      <mat-icon class="editCl"
         color="primary"
         matTooltip="Edit"
         (click)="editMate(values,ind)">edit</mat-icon> &nbsp;
-      <mat-icon color="warn"
+      <mat-icon class="delCl"
+        color="warn"
         (click)="deleteMate(ind)"
         matTooltip="Delete">delete</mat-icon> &nbsp;
     </mat-card-actions>
