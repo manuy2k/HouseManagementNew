@@ -1,4 +1,7 @@
-<div *ngFor="let values of _newData">
+<div style="display: block; float: right;">
+  <button mat-mini-fab color="primary" (click)="newMateDialog()"><mat-icon>add_circle</mat-icon></button>
+</div>
+<div *ngFor="let values of _newData; let ind=index">
   <mat-card class="example-card" style="background-color:#fffaeb">
     <img mat-card-image src="./assets/images/AdminModule/profileDp.jpg" style="height: 150px; width: 150px;">
     <mat-card-content>
@@ -10,14 +13,10 @@
       <mat-icon
         color="primary"
         matTooltip="Edit"
-        (click)="doSomething()">edit</mat-icon>
-      &nbsp;
+        (click)="editMate(values,ind)">edit</mat-icon> &nbsp;
       <mat-icon color="warn"
-        (click)="doSomething()"
+        (click)="deleteMate(ind)"
         matTooltip="Delete">delete</mat-icon> &nbsp;
-      <mat-icon color="primary"
-      (click)="doSomething()"
-      matTooltip="Change Role">autorenew</mat-icon>
     </mat-card-actions>
   </mat-card>
 

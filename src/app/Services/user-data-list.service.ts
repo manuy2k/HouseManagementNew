@@ -57,12 +57,31 @@ export class UserDataListService {
                     email: value.email,
                     phone: value.phone,
                     role: value.role
-                  }
+                  };
     this.usersList.push(temp);
+    this.msg.next([...this.usersList]);
   }
 
   getLiveData(){
     return this.msg.asObservable();
+  }
+
+  updateData(updv: Dataformat, ind: number){
+    const temp = {
+      id:this.usersList[ind].id,
+      firstName: updv.firstName,
+      lastName: updv.lastName,
+      email: updv.email,
+      phone: updv.phone,
+      role: updv.role
+    };
+    this.usersList[ind]=temp;
+    this.msg.next([...this.usersList]);
+  }
+
+  deleteData(ind){
+    this.usersList.splice(ind,1);
+    this.msg.next([...this.usersList]);
   }
 
 }

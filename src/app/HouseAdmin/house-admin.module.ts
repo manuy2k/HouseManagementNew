@@ -9,6 +9,10 @@ import { ManageRolesComponent } from './components/manage-roles/manage-roles.com
 import { RaiseCapitalComponent } from './components/raise-capital/raise-capital.component';
 import { UpcomingEventsComponent } from './components/upcoming-events/upcoming-events.component';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
+import { AddMateDialogComponent } from './components/add-mate-dialog/add-mate-dialog.component';
+import { FormsModule } from '@angular/forms';
+import { EditMateDialogComponent } from './components/edit-mate-dialog/edit-mate-dialog.component';
+import { DeleteMateDialogComponent } from './components/delete-mate-dialog/delete-mate-dialog.component';
 
 const routes: Routes = [
   { path: 'homePage', component: AdminHomeComponent,
@@ -31,12 +35,21 @@ const routes: Routes = [
     ManageRolesComponent,
     RaiseCapitalComponent,
     UpcomingEventsComponent,
-    DashBoardComponent
+    DashBoardComponent,
+    AddMateDialogComponent,
+    EditMateDialogComponent,
+    DeleteMateDialogComponent
   ],
   imports: [
     CommonModule,
     MaterialFilesModule,
+    FormsModule,
     RouterModule.forChild(routes)
+  ],
+  entryComponents:[
+    AddMateDialogComponent,
+    EditMateDialogComponent,
+    DeleteMateDialogComponent
   ]
 })
 export class HouseAdminModule { }

@@ -1,0 +1,47 @@
+<h4 mat-dialog-title>Add Room Mate</h4>
+<form #mateForm="ngForm" class="dialogClass" (ngSubmit)="getValues(mateForm)">
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput name="firstName" [(ngModel)]="firstName" #fName required minlength=3>
+      <mat-icon matSuffix>tag_faces</mat-icon>
+      <mat-hint>Min length is 3!</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput name="lastName" [(ngModel)]="lastName" required minlength=3>
+      <mat-icon matSuffix>tag_faces</mat-icon>
+      <mat-hint>Min length is 3!</mat-hint>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput name="email" [(ngModel)]="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+      <mat-icon matSuffix>alternate_email</mat-icon>
+      <mat-hint>name@example.com</mat-hint>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Phone</mat-label>
+      <input matInput name="phone" [(ngModel)]="phone" required minlength=10>
+      <mat-icon matSuffix>phone</mat-icon>
+      <mat-hint>98765 43210</mat-hint>
+    </mat-form-field>
+  </div>
+
+  <label><strong>Role: </strong></label>
+  <div>
+    <mat-radio-group name="role" [(ngModel)]="role">
+      <mat-radio-button value="Admin">Admin</mat-radio-button> &nbsp; &nbsp;
+      <mat-radio-button value="Mate">Mate</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  <hr>
+  <button mat-stroked-button color="primary" type="submit" [disabled]="!mateForm.valid">SUBMIT</button> &nbsp; &nbsp;
+  <button mat-stroked-button color="warn" (click)="onNoClick()">CLOSE</button>
+</form>
