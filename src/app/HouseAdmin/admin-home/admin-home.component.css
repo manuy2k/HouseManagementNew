@@ -21,3 +21,36 @@
 .logoutButton:hover{
     background-color: #F7DC6F
 }
+
+.logout{
+  float: right;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 2px;
+  margin-right: 18px;
+  background-color: #0059b3;
+  color: white;
+  border: none;
+}
+
+
+.logout:hover,
+.logout:focus {
+  background-color: white;
+  color: black;
+}
+
+.profile{
+  float: right;
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: #0059b3;
+  color: white;
+  border:none;
+}
+
+.profile:hover,
+.profile:focus{
+  background-color: white;
+  color:black;
+}

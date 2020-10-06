@@ -1,31 +1,31 @@
 <h5 style="display:inline">Create a Monthly Breakup</h5>
 
 <hr>
-
+<!--
 <form>
   <div class="form-group">
     <label for="forRent">Rent</label>
-    <input type="text" class="form-control" id="forRent" aria-describedby="emailHelp">    
+    <input type="text" class="form-control" id="forRent" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
     <label for="forElec">Electricity</label>
-    <input type="text" class="form-control" id="forElec" aria-describedby="emailHelp">    
+    <input type="text" class="form-control" id="forElec" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
     <label for="forNet">Internet</label>
-    <input type="text" class="form-control" id="forNet" aria-describedby="emailHelp">    
+    <input type="text" class="form-control" id="forNet" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
     <label for="forGas">Gas</label>
-    <input type="text" class="form-control" id="forGas" aria-describedby="emailHelp">    
+    <input type="text" class="form-control" id="forGas" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
     <label for="forGroc">Monthly Groceries</label>
-    <input type="text" class="form-control" id="forGroc" aria-describedby="emailHelp">    
+    <input type="text" class="form-control" id="forGroc" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
     <label for="forOth">Others</label>
-    <input type="text" class="form-control" id="forOth" aria-describedby="emailHelp">    
+    <input type="text" class="form-control" id="forOth" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
     <label for="forOthDesc">Description of Other Items</label>
@@ -35,4 +35,109 @@
   <button type="reset" class="btn btn-warning" style="margin-left: 10px;">Reset</button>
 </form>
 
+ -->
 
+<div class="card-displayDiv">
+  <mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>House Rent</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p  [hidden]="!_trent"><strong>{{ newPlan.rent }}</strong></p>
+      <input class="editClass" [hidden]="_trent" type="text" [(ngModel)]="newPlan.rent" placeholder="{{ newPlan.rent}}">
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [hidden]="!_trent" (click)="toggler('r')" >EDIT</button>
+      <button mat-button [hidden]="_trent" (click)="toggler('r')" >SAVE</button>
+      <button mat-button>DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+<div class="card-displayDiv">
+  <mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>Electricity</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p  [hidden]="!_telec"><strong>{{ newPlan.elec }}</strong></p>
+      <input class="editClass" [hidden]="_telec" type="text" [(ngModel)]="newPlan.elec" placeholder="{{ newPlan.elec}}">
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [hidden]="!_telec" (click)="toggler('e')" >EDIT</button>
+      <button mat-button [hidden]="_telec" (click)="toggler('e')" >SAVE</button>
+      <button mat-button>DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="card-displayDiv">
+  <mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>Internet</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p  [hidden]="!_tnet"><strong>{{ newPlan.internet }}</strong></p>
+      <input class="editClass" [hidden]="_tnet" type="text" [(ngModel)]="newPlan.internet" placeholder="{{ newPlan.internet}}">
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [hidden]="!_tnet" (click)="toggler('n')" >EDIT</button>
+      <button mat-button [hidden]="_tnet" (click)="toggler('n')" >SAVE</button>
+      <button mat-button>DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="card-displayDiv">
+  <mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>Gas</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p  [hidden]="!_tgas"><strong>{{ newPlan.gas }}</strong></p>
+      <input class="editClass" [hidden]="_tgas" type="text" [(ngModel)]="newPlan.gas" placeholder="{{ newPlan.gas}}">
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [hidden]="!_tgas" (click)="toggler('g')" >EDIT</button>
+      <button mat-button [hidden]="_tgas" (click)="toggler('g')" >SAVE</button>
+      <button mat-button>DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="card-displayDiv">
+  <mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>Groceries</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p  [hidden]="!_tgroc"><strong>{{ newPlan.groc }}</strong></p>
+      <input class="editClass" [hidden]="_tgroc" type="text" [(ngModel)]="newPlan.groc" placeholder="{{ newPlan.groc}}">
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [hidden]="!_tgroc" (click)="toggler('gr')" >EDIT</button>
+      <button mat-button [hidden]="_tgroc" (click)="toggler('gr')" >SAVE</button>
+      <button mat-button>DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="card-displayDiv">
+  <mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>Misc</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p  [hidden]="!_tothers"><strong>{{ newPlan.others }}</strong></p>
+      <input class="editClass" [hidden]="_tothers" type="text" [(ngModel)]="newPlan.others" placeholder="{{ newPlan.others}}">
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [hidden]="!_tothers" (click)="toggler('o')" >EDIT</button>
+      <button mat-button [hidden]="_tothers" (click)="toggler('o')" >SAVE</button>
+      <button mat-button>DELETE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<button style="display: block; float: center" mat-button (click)="goForIt()">Submit</button>

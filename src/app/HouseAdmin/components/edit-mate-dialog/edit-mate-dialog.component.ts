@@ -27,8 +27,6 @@ export class EditMateDialogComponent implements OnInit {
   }
 
   updateValues(updatedForm: NgForm){
-    console.log(updatedForm.value);
-
     this.usdServ.updateData(updatedForm.value,this._d.ind);
     this.dRef.close();
   }
