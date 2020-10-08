@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BudgetPlanComponent implements OnInit {
 
-  toggle: boolean = false;
+  toggle: boolean = true;
   newPlan: breakupPlanFormat;
   constructor(private _bps: BreakupPlanService) { }
 
@@ -24,6 +24,8 @@ export class BudgetPlanComponent implements OnInit {
     console.log(key);
     if(key=="rent")
       this.toggle = !this.toggle;
+    if(key=="elec")
+    this.toggle = !this.toggle;
   }
 
   goForIt(){
