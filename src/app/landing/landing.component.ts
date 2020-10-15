@@ -1,3 +1,5 @@
+import { loginFormat } from './../Services/loginFormat';
+import { UserLoginService } from './../Services/user-login.service';
 import { CLFormComponent } from './components/clform/clform.component';
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
@@ -9,11 +11,22 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class LandingComponent implements OnInit {
 
-  constructor(router: Router) { }
+  nowData: loginFormat[] = [];
+  login_id: string = "";
+  password_id: string = "";
+  constructor(public router: Router,
+    public loginServ: UserLoginService) { }
 
   ngOnInit() {
   }
+
   doProcessReq(){
-    alert("Logging in....")
+    for(let i of this.loginServ.sendLoginData()){
+      if(i.userID === this.login_id && i.password === this.password_id){
+        this.router.navigateByUrl('/adminMode/homePage');
+      }
+    }
+
+
   }
 }

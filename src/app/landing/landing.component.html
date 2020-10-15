@@ -4,14 +4,15 @@
 
   <img src="assets/images/logo.png" alt="App Logo" width="70px" height="70px">
   <img src="assets/images/app_name.png" alt="App Name" width="220px" height="70px">
-  
+
   <div class="loginClass">
     <label for="login_id">Login ID</label> &nbsp;
-    <input type="text" class="inProp" name="login_id"> &nbsp;&nbsp;&nbsp;
+    <input type="text" class="inProp" [(ngModel)]="login_id"> &nbsp;&nbsp;&nbsp;
     <label for="password_id">Password</label> &nbsp;
-    <input type="text" class="inProp" name="password_id">&nbsp;&nbsp;&nbsp;
-    <button class="loginButton" routerLink="/adminMode/homePage" (click)="doProcessReq()">Login</button>
-  </div> 
+    <input type="password" class="inProp" [(ngModel)]="password_id">&nbsp;&nbsp;&nbsp;
+    <button class="loginButton"  (click)="doProcessReq()">Login</button>
+    <!-- routerLink="/adminMode/homePage" -->
+  </div>
 </header>
 
 <body class="main_body">
@@ -20,11 +21,11 @@
    <div class="col-6">
     <app-clform> </app-clform>
    </div>
-   
-  
+
+
  </div>
 </body>
-<!-- 
+<!--
 <footer class="footerStyle">
   <div class="hLinkTwo">
     <a class="hLink" href="#">Quick Links</a> &nbsp;
@@ -34,6 +35,6 @@
     <a class="hLink" href="#">Privacy</a> &nbsp;
     <a class="hLink" href="#">Settings</a> &nbsp;
   </div>
-  
+
 </footer>
  -->

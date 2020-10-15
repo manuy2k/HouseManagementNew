@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MemberHomeComponent } from './HouseMember/member-home/member-home.component';
 import { LandingComponent } from './landing/landing.component';
 import { CLFormComponent } from './landing/components/clform/clform.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { CLFormComponent } from './landing/components/clform/clform.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    FormsModule,
     MaterialFilesModule
 
   ],

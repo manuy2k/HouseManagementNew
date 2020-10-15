@@ -10,7 +10,7 @@ import { RaiseCapitalComponent } from './components/raise-capital/raise-capital.
 import { UpcomingEventsComponent } from './components/upcoming-events/upcoming-events.component';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
 import { AddMateDialogComponent } from './components/add-mate-dialog/add-mate-dialog.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditMateDialogComponent } from './components/edit-mate-dialog/edit-mate-dialog.component';
 import { DeleteMateDialogComponent } from './components/delete-mate-dialog/delete-mate-dialog.component';
 
@@ -44,6 +44,7 @@ const routes: Routes = [
     CommonModule,
     MaterialFilesModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   entryComponents:[

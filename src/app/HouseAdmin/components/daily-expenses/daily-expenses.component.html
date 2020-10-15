@@ -1,78 +1,87 @@
-<button class="btn btn-outline-dark btn-sm" 
-        style="float:right; display: block; margin-bottom: 15px;"
-        (click)="tableHider()" *ngIf=tableToggler>Hide</button>
-<button class="btn btn-outline-dark btn-sm" 
-        style="float:right; display: block; margin-bottom: 15px;"
-        (click)="tableHider()" *ngIf=!tableToggler>Show</button>     
+<button mat-raised-button color="primary" style="float:right; display: block; margin-bottom: 15px;"
+  (click)="tableHider()" *ngIf=!tableToggler>Show</button>
+<button mat-raised-button color="primary" style="float:right; display: block; margin-bottom: 15px;"
+  (click)="tableHider()" *ngIf=tableToggler>Hide</button>
 
-<div style="margin-top: 50px;">
-  <div *ngIf=tableToggler>
-    <h4 style="display: inline; text-align: center; padding-left: 155px;">Your spendings</h4>  
-    <button class="btn btn-outline-primary btn-sm" style="float: left;">Last week</button>                  
-    <button class="btn btn-outline-primary btn-sm" style="float:right">Next week</button>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
-      </tbody>
-    </table>
-  
-  </div>        
-            <h4>Add Item</h4>
-            <form>
-              <div class="form-group">
-                <label for="itemName">Item Name</label>
-                <input type="email" class="form-control" id="itemName">
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Category</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option>Groceries</option>
-                  <option>Pantrys</option>
-                  <option>Edibles</option>
-                  <option>Furnitures/Comfortables</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlSelect2">Items Count: </label> &nbsp;
-                <button type="button" class="btn btn-outline-dark btn-sm" (click)="IncDec(1)">+</button>
-                 &nbsp; {{ itemsCount}} &nbsp;
-                <button type="button" class="btn btn-outline-dark btn-sm" (click)="IncDec(0)">-</button>
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="cost">Item Cost</label>
-                <input type="text" class="form-control" id="cost">
-              </div>
-              <button class="btn btn-primary btn-sm">Submit</button> &nbsp;
-              <button class="btn btn-warning btn-sm">Reset</button>
-            </form>
-</div>        
+<div *ngIf=tableToggler style="margin-top:50px">
+  <h4 style="display: inline; text-align: center; padding-left: 155px;">Your spendings</h4>
+  <button mat-stroked-button style="float: left;">Last week</button>
+  <button mat-stroked-button style="float:right">Next week</button>
+
+  <table mat-table [dataSource]="tableItemsList" class="mat-elevation-z8" style="margin-top:20px">
+    <ng-container matColumnDef="iName">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let i">{{ i.itemName}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="iCategory">
+      <th mat-header-cell *matHeaderCellDef>Category</th>
+      <td mat-cell *matCellDef="let i">{{ i.itemCategory}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="iCount">
+      <th mat-header-cell *matHeaderCellDef>Count</th>
+      <td mat-cell *matCellDef="let i">{{ i.itemCount}}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="iCost">
+      <th mat-header-cell *matHeaderCellDef>Cost</th>
+      <td mat-cell *matCellDef="let i">{{ i.itemCost}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<br>
+
+<hr>
+<mat-card>
+  <h4>Add Item</h4>
+  <form #itemForm=ngForm (ngSubmit)="onSubmitted(itemForm)">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="_itemName" name="itemName">
+        <mat-hint>Item Name eh?</mat-hint>
+      </mat-form-field>
+    </p>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Category</mat-label>
+      <mat-select [(ngModel)]="_itemCategory" name="itemCategory">
+        <mat-option value="gr">Grocery</mat-option>
+        <mat-option value="ed">Edibles</mat-option>
+        <mat-option value="fu">Furniture</mat-option>
+        <mat-option value="ot">Others</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <p>
+      <mat-label>Count: </mat-label>
+      <button mat-stroked-button (click)="bokkale(1)">+</button>
+      &nbsp; {{ itemsCount}} &nbsp;
+      <button mat-stroked-button (click)="bokkale(0)">-</button>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Wanna add some description about item ye...?" [(ngModel)]="_itemDesc" name="itemDesc"></textarea>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Cost</mat-label>
+        <input matInput [(ngModel)]="_itemCost" name="itemCost">
+      </mat-form-field>
+    </p>
+
+    <button mat-stroked-button type="submit">Ok</button>
+  </form>
+
+
+</mat-card>
