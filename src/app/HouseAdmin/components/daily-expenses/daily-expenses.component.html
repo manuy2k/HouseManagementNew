@@ -1,14 +1,8 @@
-<button mat-raised-button color="primary" style="float:right; display: block; margin-bottom: 15px;"
-  (click)="tableHider()" *ngIf=!tableToggler>Show</button>
-<button mat-raised-button color="primary" style="float:right; display: block; margin-bottom: 15px;"
-  (click)="tableHider()" *ngIf=tableToggler>Hide</button>
 
-<div *ngIf=tableToggler style="margin-top:50px">
-  <h4 style="display: inline; text-align: center; padding-left: 155px;">Your spendings</h4>
-  <button mat-stroked-button style="float: left;">Last week</button>
-  <button mat-stroked-button style="float:right">Next week</button>
+<div style="margin-top:10px">
+  <h4>Spendings</h4>
 
-  <table mat-table [dataSource]="tableItemsList" class="mat-elevation-z8" style="margin-top:20px">
+  <table mat-table [dataSource]="tableItemsList" class="mat-elevation-z8" style="margin-top:10px">
     <ng-container matColumnDef="iName">
       <th mat-header-cell *matHeaderCellDef>Name</th>
       <td mat-cell *matCellDef="let i">{{ i.itemName}}</td>
@@ -37,50 +31,50 @@
 </div>
 
 <br>
+<br>
 
-<hr>
-<mat-card>
+<mat-card class="example-card">
   <h4>Add Item</h4>
-  <form #itemForm=ngForm (ngSubmit)="onSubmitted(itemForm)">
+  <form  #expensesForm="ngForm" (ngSubmit)="onSubmitted()">
     <p>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="expenses-form">
         <mat-label>Name</mat-label>
-        <input matInput [(ngModel)]="_itemName" name="itemName">
-        <mat-hint>Item Name eh?</mat-hint>
+        <input matInput [(ngModel)]="newEntry.itemName" name="itemName" required minlength="3">
       </mat-form-field>
     </p>
 
 
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="expenses-form">
       <mat-label>Category</mat-label>
-      <mat-select [(ngModel)]="_itemCategory" name="itemCategory">
-        <mat-option value="gr">Grocery</mat-option>
-        <mat-option value="ed">Edibles</mat-option>
-        <mat-option value="fu">Furniture</mat-option>
-        <mat-option value="ot">Others</mat-option>
+      <mat-select [(ngModel)]="newEntry.itemCategory" name="itemCategory" required>
+        <mat-option value="Grocery">Grocery</mat-option>
+        <mat-option value="Edibles">Edibles</mat-option>
+        <mat-option value="Furniture">Furniture</mat-option>
+        <mat-option value="Others">Others</mat-option>
       </mat-select>
     </mat-form-field>
 
-    <p>
+    <p class="expenses-form">
       <mat-label>Count: </mat-label>
-      <button mat-stroked-button (click)="bokkale(1)">+</button>
+      <button type="button" mat-stroked-button (click)="bokkale(1)">+</button>
       &nbsp; {{ itemsCount}} &nbsp;
-      <button mat-stroked-button (click)="bokkale(0)">-</button>
+      <button type="button" mat-stroked-button (click)="bokkale(0)">-</button>
     </p>
     <p>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="expenses-form">
         <mat-label>Description</mat-label>
-        <textarea matInput placeholder="Wanna add some description about item ye...?" [(ngModel)]="_itemDesc" name="itemDesc"></textarea>
+        <textarea matInput [(ngModel)]="newEntry.itemDesc" name="itemDesc"></textarea>
       </mat-form-field>
     </p>
     <p>
-      <mat-form-field appearance="outline">
+      <mat-form-field appearance="outline" class="expenses-form">
         <mat-label>Cost</mat-label>
-        <input matInput [(ngModel)]="_itemCost" name="itemCost">
+        <input matInput type="number" [(ngModel)]="newEntry.itemCost" name="itemCost" required>
       </mat-form-field>
     </p>
 
-    <button mat-stroked-button type="submit">Ok</button>
+    <button mat-raised-button type="submit" class="expenses-form" color="primary" [disabled]="!expensesForm.valid" >Submit</button>
+    <button mat-raised-button type="reset" class="expenses-form" color="warn">Reset</button>
   </form>
 
 

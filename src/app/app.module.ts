@@ -8,6 +8,7 @@ import { MemberHomeComponent } from './HouseMember/member-home/member-home.compo
 import { LandingComponent } from './landing/landing.component';
 import { CLFormComponent } from './landing/components/clform/clform.component';
 import { FormsModule } from '@angular/forms';
+import { BadLoginComponent } from './OtherComponents/bad-login/bad-login.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     MemberHomeComponent,
     LandingComponent,
-    CLFormComponent
+    CLFormComponent,
+    BadLoginComponent
   ],
   imports: [
     BrowserModule,

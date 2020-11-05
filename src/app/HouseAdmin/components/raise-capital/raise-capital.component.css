@@ -1,0 +1,17 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.amount{
+  width:60%
+}
+
+.card-class{
+  width: 50%
+}
+
+.raiseAmt{
+  width: 100%;
+}

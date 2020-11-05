@@ -1,5 +1,6 @@
 import { dailyExpensesFormat } from './../HouseAdmin/dailyExpensesFormat';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -91,9 +92,20 @@ export class DailyExpensesService {
       itemCost:1000
     }
   ];
+
+  private msg = new Subject<dailyExpensesFormat[]>();
   constructor() { }
 
   sendData(){
-    return [...this.staticItemsList];
+  return [...this.staticItemsList];
+  }
+
+  addData(newEntry:dailyExpensesFormat){
+    this.staticItemsList.push(newEntry);
+    this.msg.next([...this.staticItemsList]);
+  }
+
+  sendObvData(){
+    return this.msg.asObservable();
   }
 }

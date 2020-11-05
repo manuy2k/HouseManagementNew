@@ -1,10 +1,15 @@
-<h6>This month capital amount: </h6>
-<h6>Remaining amount:</h6>
 
-<form>
-  <div class="form-group">
-    <label for="forAmo">Raise Amount</label>
-    <input type="text" class="form-control" id="forAmo">    
-  </div>  
-  <button type="submit" class="btn btn-primary">Submit</button>  
-</form>
+<mat-card class="card-class">
+  <h6 class="body-2">Alloted capital for the month of {{ monthDate | date:'MMM'}}:<strong> {{ allotedAmount }}</strong> </h6> <br>
+  <h6>Remaining amount: <strong> {{ remainingAmount}} </strong></h6>
+</mat-card>
+<br>
+<mat-card class="card-class">
+
+  <mat-form-field appearance="outline" class="raiseAmt">
+    <mat-label>Raise Amount</mat-label>
+    <input matInput type="number" [(ngModel)]="raiseAmount" (keyup.enter)="nowRaise()" class="raiseAmt">
+  </mat-form-field>
+  <button mat-raised-button color="accent" (click)="nowRaise()" style="display: block;" class="raiseAmt">Raise  <mat-icon>arrow_upward</mat-icon> </button>
+</mat-card>
+

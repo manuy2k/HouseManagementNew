@@ -1,0 +1,23 @@
+table {
+  width: 80%;
+}
+
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+.cardStyle{
+  width: 80%;
+  box-shadow: 2px 2px 8px 1px #636363;
+}
+
+.inFields{
+  width:100%;
+}
+
+.inButton{
+  width: 100% !important;
+  margin-left: 1px;
+  margin-right: 1px;
+}

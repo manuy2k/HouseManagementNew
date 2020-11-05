@@ -4,14 +4,18 @@
   text-align: center;
 }
 
+.example-card:hover{
+  box-shadow: 0 8px 15px 0 rgba(0,0,0,4);
+}
+
 .card-displayDiv{
   display: inline-block;
   margin: 25px;
 }
 
-.card-displayDiv:hover{
+/* .card-displayDiv:hover{
   box-shadow: 0 8px 15px 0 rgba(0,0,0,4);
-}
+} */
 
 .editClass{
   border:none;

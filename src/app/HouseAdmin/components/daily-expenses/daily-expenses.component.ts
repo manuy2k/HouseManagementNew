@@ -16,30 +16,22 @@ export class DailyExpensesComponent implements OnInit {
   tableToggler: boolean = true;
   tableItemsList: dailyExpensesFormat[];
   displayedColumns:string[]= ['iName','iCategory','iCount','iCost'];
-
-  _itemName:string="";
-  _itemCategory:string="";
   _itemCount: number=0;
-  _itemDesc:string="";
-  _itemCost:number=0;
+  newEntry: dailyExpensesFormat = {
+    itemName:'',
+    itemCategory:'',
+    itemCount:0,
+    itemDesc:'',
+    itemCost:null
+  };
 
   constructor(public deSer: DailyExpensesService) { }
 
   ngOnInit() {
     this.tableItemsList = this.deSer.sendData();
-  }
-
-  onSubmitted(incVal:NgForm){
-    this._itemName = incVal.value.itemName;
-    this._itemCategory = incVal.value.itemCategory;
-    this._itemCount = this.itemsCount;
-    this._itemDesc = incVal.value.itemDesc;
-    this._itemCost = incVal.value.itemCost;
-    console.log("From On Submitted Method",incVal.value);
-  }
-
-  tableHider(){
-    this.tableToggler = !this.tableToggler;
+    this.deSer.sendObvData().subscribe((response:dailyExpensesFormat[])=>{
+      this.tableItemsList = response;
+    })
   }
 
   bokkale(val:number){
@@ -51,6 +43,24 @@ export class DailyExpensesComponent implements OnInit {
       return;
       this.itemsCount--;
     }
+  }
+
+  onSubmitted(){
+    // this.newEntry.itemName = this._itemName;
+    // this.newEntry.itemCategory = this._itemCategory;
+    // this.newEntry.itemDesc = this._itemDesc;
+    // this.newEntry.itemCost = this._itemCost;
+
+    this.newEntry.itemCount = this.itemsCount;
+    if(this.itemsCount===0) this.newEntry.itemCount = 1;
+    if(this.newEntry.itemDesc===null || this.newEntry.itemDesc === " ") this.newEntry.itemDesc = "No Description Provided";
+    console.log("From Submit method");
+    console.log(this.newEntry.itemName,this.newEntry.itemCategory, this.newEntry.itemCount, this.newEntry.itemDesc, this.newEntry.itemCost);
+    this.deSer.addData(this.newEntry);
+  }
+
+  tableHider(){
+    this.tableToggler = !this.tableToggler;
   }
 
 }

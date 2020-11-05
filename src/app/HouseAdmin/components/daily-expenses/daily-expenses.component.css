@@ -3,3 +3,19 @@
 table{
   width:60%;
 }
+
+.expenses-form{
+  width:100%;
+  margin-bottom: 8px;
+}
+
+.example-card{
+  width: 60%;
+  box-shadow: 1px 1px 10px 5px #c4c4c4;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

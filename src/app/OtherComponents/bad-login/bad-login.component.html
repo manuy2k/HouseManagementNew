@@ -1,0 +1,42 @@
+<div class="headerStyle">
+  <!-- <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <img src="assets/images/logo.png" alt="App Logo" width="70px" height="70px">
+  <img src="assets/images/app_name.png" alt="App Name" width="220px" height="70px">
+  <button mat-mini-fab color="primary" routerLink="/" class="bth">
+    <mat-icon>home</mat-icon>
+  </button>
+</div>
+
+<div>
+  <mat-card class="naIshtam">
+    <h5>Login ID or Password is wrong!!</h5>
+    <p><strong>Try again</strong></p>
+    <form #loginForm="ngForm">
+      <p>
+        <mat-form-field appearance="outline" class="inpField">
+          <mat-label>Login ID</mat-label>
+          <input matInput name="id" [(ngModel)]="loginID" required minlength="3">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field appearance="outline" class="inpField">
+          <mat-label>Password</mat-label>
+          <input matInput
+          [type]="pwdT ? 'text' : 'password'"
+          name="pwd" [(ngModel)]="password"
+          (keyup.enter)="doProcessReq()"
+          required minlength="4">
+
+          <mat-icon *ngIf="pwdV" matSuffix (click)="iconToggler()">visibility</mat-icon>
+          <mat-icon *ngIf="!pwdV" matSuffix (click)="iconToggler()">visibility_off</mat-icon>
+        </mat-form-field>
+      </p>
+      <p *ngIf="wrongAgain"><strong>Chusi kuda thappulu kodathavera puka.. Sarigga kotti savu</strong></p>
+      <button mat-stroked-button color="primary" (click)="doProcessReq(); loginForm.resetForm()" [disabled]="!loginForm.valid" >Login</button>
+    </form>
+
+  </mat-card>
+</div>

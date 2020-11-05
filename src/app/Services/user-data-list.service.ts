@@ -42,6 +42,30 @@ export class UserDataListService {
       phone: 9491707527,
       role: "Mate"
     },
+    {
+      id: 567,
+      firstName: "Vinay",
+      lastName: "Sheel",
+      email: "vinaysheel521@gmail.com",
+      phone: 9492010521,
+      role: "Mate"
+    },
+    {
+      id: 678,
+      firstName: "Shankar",
+      lastName: "Mahadevan",
+      email: "shankuprince@gmail.com",
+      phone: 9440691410,
+      role: "Mate"
+    },
+    {
+      id: 789,
+      firstName: "Wasim",
+      lastName: "Abdul",
+      email: "wasimabdul29@gmail.com",
+      phone: 9494756577,
+      role: "Mate"
+    },
   ];
   private msg = new Subject<Dataformat[]>();
 

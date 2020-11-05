@@ -1,4 +1,4 @@
-@import "~bootstrap/dist/css/bootstrap.min.css";
+
 .headerStyle{
     background-color: #0059b3;
 }
@@ -45,12 +45,12 @@ input:focus {
     /* height: 537px;
     width: 1348px; */
     /* background-image: url("/assets/images/landingCompProps/background.jpg"); */
-/* 
-    background-color: #FFFFFF;
-    background-image: linear-gradient(180deg, #FFFFFF 0%, #6284FF 50%, #00ecff 100%);
-    background-repeat: repeat-x, repeat-y; */
 
-
+    background: rgb(2,0,36);
+    background: linear-gradient(45deg,
+                rgba(2,0,36,0.9220063025210083) 0%,
+                rgba(224,224,255,1) 49%,
+                rgba(202,237,244,0.9556197478991597) 100%);
 
 }
 
@@ -64,7 +64,7 @@ input:focus {
 } */
 
 
-.footerStyle{
+/* .footerStyle{
     position: absolute;
     width: 100%;
     background-color: #999999;
@@ -72,12 +72,39 @@ input:focus {
     color: white;
     text-align: center;
     height:30px;
-}
-
+} */
+/*
 .footerStyle .hLink{
     color: white;
     padding: 5px;
 
+} */
+
+
+.naIshtam{
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  align-content: center;
+  width: 35%;
+  box-shadow: 2px 2px 5px 5px #d6d6d6;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #8EC5FC;
+  background-image: linear-gradient(12deg, #8EC5FC 0%, #E0C3FC 15%, #ffffff 35%);
+
+}
+
+.inpField{
+  width: 80%;
+  margin-left: 20px;
 }
 
 
+.bth{
+  float: right;
+  margin-right: 10px;
+  margin-top: 12px;
+  background-color:#4a7fff !important;
+
+}

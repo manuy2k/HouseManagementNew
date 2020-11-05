@@ -1,32 +1,31 @@
 <div class="headerClass">
-  <img src="./assets/images/logo-2.png" height="70px" width="70px" alt="App_Logo" style="margin:0" routerLink="/adminMode/homePage">
-  <img src="./assets/images/app_name.png" height="70px" width="200px" alt="App_Name" style="margin:0" routerLink="/adminMode/homePage">
+  <img src="./assets/images/logo-2.png" height="70px" width="70px" alt="App_Logo" style="margin:0"
+    routerLink="/adminMode/homePage">
+  <img src="./assets/images/app_name.png" height="70px" width="200px" alt="App_Name" style="margin:0"
+    routerLink="/adminMode/homePage">
   <button class="logout" routerLink="/">
     Logout
   </button>
-  <button
-  class="profile"
-  routerLink=""
-  >Profile</button>
+  <button class="profile" routerLink="">Profile</button>
 </div>
 
-<div class="row" >
-  <div class="col-3" style="margin-top: 20px;">
-    <button type="button" (click)="loadComponents(0)" routerLink='homePage'
-      class="btn btn-outline-primary btn-block btn-sm">Home</button>
-    <button type="button" (click)="loadComponents(1)" routerLink='budgetPlan'
-      class="btn btn-outline-primary btn-block btn-sm">Budget Plan</button>
-    <button type="button" (click)="loadComponents(2)" routerLink='dailyExpenses'
-      class="btn btn-outline-primary btn-block btn-sm"> Daily Expenses</button>
-    <button type="button" (click)="loadComponents(3)" routerLink='raiseCapital'
-      class="btn btn-outline-primary btn-block btn-sm">Raise Capital</button>
-    <button type="button" (click)="loadComponents(4)" routerLink='upcoming'
-      class="btn btn-outline-primary btn-block btn-sm">Upcoming Events</button>
-    <button type="button" (click)="loadComponents(5)" routerLink='manageRoles'
-      class="btn btn-outline-primary btn-block btn-sm">Room Mates</button>
-  </div>
+  <div class="row">
+    <div class="col-3" style="margin-top: 20px;">
+      <button type="button" (click)="loadComponents(0)" routerLink='homePage'
+        class="btn btn-outline-primary btn-block btn-sm">Home</button>
+      <button type="button" (click)="loadComponents(1)" routerLink='budgetPlan'
+        class="btn btn-outline-primary btn-block btn-sm">Budget Plan</button>
+      <button type="button" (click)="loadComponents(2)" routerLink='dailyExpenses'
+        class="btn btn-outline-primary btn-block btn-sm"> Daily Expenses</button>
+      <button type="button" (click)="loadComponents(3)" routerLink='raiseCapital'
+        class="btn btn-outline-primary btn-block btn-sm">Raise Capital</button>
+      <button type="button" (click)="loadComponents(4)" routerLink='upcoming'
+        class="btn btn-outline-primary btn-block btn-sm">Upcoming Events</button>
+      <button type="button" (click)="loadComponents(5)" routerLink='manageRoles'
+        class="btn btn-outline-primary btn-block btn-sm">Room Mates</button>
+    </div>
 
-  <div class="col-9" style="margin-top: 20px;">
-    <router-outlet></router-outlet>
+    <div class="col-9" style="margin-top: 20px;">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</div>

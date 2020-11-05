@@ -14,6 +14,7 @@ export class LandingComponent implements OnInit {
   nowData: loginFormat[] = [];
   login_id: string = "";
   password_id: string = "";
+  counter:number = 0;
   constructor(public router: Router,
     public loginServ: UserLoginService) { }
 
@@ -22,11 +23,13 @@ export class LandingComponent implements OnInit {
 
   doProcessReq(){
     for(let i of this.loginServ.sendLoginData()){
-      if(i.userID === this.login_id && i.password === this.password_id){
+      if(this.login_id === i.userID && this.password_id === i.password){
         this.router.navigateByUrl('/adminMode/homePage');
+        this.counter = 1;
       }
     }
-
-
+    if(this.counter == 0){
+      this.router.navigateByUrl('/badLogin');
+    }
   }
 }

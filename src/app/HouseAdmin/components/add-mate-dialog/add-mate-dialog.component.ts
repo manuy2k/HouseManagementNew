@@ -37,6 +37,7 @@ export class AddMateDialogComponent implements OnInit {
   onNoClick():void{
     this._dRef.close();
   }
+
   getValues(temp:NgForm){
       this.dialogData.firstName = temp.value.firstName;
       this.dialogData.lastName = temp.value.lastName;
