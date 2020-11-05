@@ -15,19 +15,20 @@ export class BreakupPlanService {
       internet: 800,
       gas: 1000,
       groc: 2000,
-      others:[]
+      others:0
     };
-
 
   constructor() { }
 
   sendPlan(){
     return this._bpData;
+    //return [...this._bpData];
   }
 
   updatePlan(newData:breakupPlanFormat){
-      this._bpData = newData;
-      console.log(this._bpData);
+    this._bpData = newData;
+      //this._bpData.push(newData);
+      console.log("From BreakupPlan Service",this._bpData);
   }
 
 }

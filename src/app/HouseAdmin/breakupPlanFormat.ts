@@ -4,5 +4,5 @@ export interface breakupPlanFormat{
   internet: number,
   gas: number,
   groc: number,
-  others:[]
+  others:number
 }

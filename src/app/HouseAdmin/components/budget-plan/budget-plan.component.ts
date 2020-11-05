@@ -10,26 +10,51 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BudgetPlanComponent implements OnInit {
 
-  toggle: boolean = true;
   newPlan: breakupPlanFormat;
+
+  //....................................togglers
+  _rent: boolean = false;
+  _elec: boolean = false;
+  _net:boolean = false;
+  _gas:boolean = false;
+  _groc:boolean = false;
+  _oth:boolean = false;
+  //....................................togglers
+
   constructor(private _bps: BreakupPlanService) { }
 
 
   ngOnInit() {
     this.newPlan =  this._bps.sendPlan();
-    console.log(this.newPlan);
-  }
-
-  toggler(key){
-    console.log(key);
-    if(key=="rent")
-      this.toggle = !this.toggle;
-    if(key=="elec")
-    this.toggle = !this.toggle;
+    console.log(this.newPlan.elec);
   }
 
   goForIt(){
     this._bps.updatePlan(this.newPlan);
     alert("Updated Successfully");
+  }
+
+  _rentM(){
+    this._rent = !this._rent;
+  }
+
+  _elecM(){
+   this._elec = !this._elec;
+  }
+
+  _netM(){
+    this._net = !this._net;
+  }
+
+  _gasM(){
+    this._gas = !this._gas;
+  }
+
+  _grocM(){
+    this._groc = !this._groc;
+  }
+
+  _othM(){
+    this._oth = !this._oth;
   }
 }

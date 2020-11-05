@@ -54,8 +54,6 @@ export class DailyExpensesComponent implements OnInit {
     this.newEntry.itemCount = this.itemsCount;
     if(this.itemsCount===0) this.newEntry.itemCount = 1;
     if(this.newEntry.itemDesc===null || this.newEntry.itemDesc === " ") this.newEntry.itemDesc = "No Description Provided";
-    console.log("From Submit method");
-    console.log(this.newEntry.itemName,this.newEntry.itemCategory, this.newEntry.itemCount, this.newEntry.itemDesc, this.newEntry.itemCost);
     this.deSer.addData(this.newEntry);
   }
 
