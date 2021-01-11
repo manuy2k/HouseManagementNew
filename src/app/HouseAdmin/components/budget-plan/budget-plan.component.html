@@ -8,9 +8,9 @@
       <h6>RENT</h6>
       <mat-card-content>
         <img src="assets/images/AdminModule/houseIcon.png" alt="" width="70px" height="70px"> <br>
-        <input [disabled]="!_rent" matInput class="cardInput" [(ngModel)]="newPlan.rent" name="rent">
+        <input [disabled]="!_rent" type="number" matInput class="cardInput" [(ngModel)]="newPlan.rent" name="rent">
         <button mat-raised-button *ngIf="!_rent" (click)="_rentM()">EDIT</button>
-        <button mat-raised-button *ngIf="_rent" (click)="_rentM()">SAVE</button>
+        <button mat-raised-button *ngIf="_rent" (click)="_rentM(); updateNow()">SAVE</button>
       </mat-card-content>
     </mat-card>
 
@@ -18,9 +18,9 @@
       <mat-card-content>
         <h6>ELECTRICITY</h6>
         <img src="assets/images/AdminModule/eleIcon.png" alt="" width="70px" height="70px"> <br>
-        <input [disabled]="!_elec" matInput class="cardInput" [(ngModel)]="newPlan.elec" name="electricity">
+        <input [disabled]="!_elec" type="number" matInput class="cardInput" [(ngModel)]="newPlan.elec" name="electricity">
         <button mat-raised-button *ngIf="!_elec" (click)="_elecM()">EDIT</button>
-        <button mat-raised-button *ngIf="_elec" (click)="_elecM()">SAVE</button>
+        <button mat-raised-button *ngIf="_elec" (click)="_elecM(); updateNow()">SAVE</button>
       </mat-card-content>
     </mat-card>
 
@@ -28,9 +28,9 @@
       <mat-card-content>
         <h6>INTERNET</h6>
         <img src="assets/images/AdminModule/netIcon.png" alt="" width="70px" height="70px"> <br>
-        <input [disabled]="!_net" matInput class="cardInput" [(ngModel)]="newPlan.internet" name="internet">
+        <input [disabled]="!_net" type="number" matInput class="cardInput" [(ngModel)]="newPlan.internet" name="internet">
         <button mat-raised-button *ngIf="!_net" (click)="_netM()">EDIT</button>
-        <button mat-raised-button *ngIf="_net" (click)="_netM()">SAVE</button>
+        <button mat-raised-button *ngIf="_net" (click)="_netM(); updateNow()">SAVE</button>
       </mat-card-content>
     </mat-card>
 
@@ -38,9 +38,9 @@
       <mat-card-content>
         <h6>GAS & KITCHEN</h6>
         <img src="assets/images/AdminModule/gasIcon.png" alt="" width="70px" height="70px"> <br>
-        <input [disabled]="!_gas" matInput class="cardInput" [(ngModel)]="newPlan.gas" name="gas">
+        <input [disabled]="!_gas" type="number" matInput class="cardInput" [(ngModel)]="newPlan.gas" name="gas">
         <button mat-raised-button *ngIf="!_gas" (click)="_gasM()">EDIT</button>
-        <button mat-raised-button *ngIf="_gas" (click)="_gasM()">SAVE</button>
+        <button mat-raised-button *ngIf="_gas" (click)="_gasM(); updateNow()">SAVE</button>
       </mat-card-content>
     </mat-card>
 
@@ -48,9 +48,9 @@
       <mat-card-content>
         <h6>GROCERY</h6>
         <img src="assets/images/AdminModule/grocIcon.png" alt="" width="70px" height="70px"> <br>
-          <input [disabled]="!_groc" matInput class="cardInput" [(ngModel)]="newPlan.groc" name="groc">
+          <input [disabled]="!_groc" type="number" matInput class="cardInput" [(ngModel)]="newPlan.groc" name="groc">
         <button mat-raised-button *ngIf="!_groc" (click)="_grocM()">EDIT</button>
-        <button mat-raised-button *ngIf="_groc" (click)="_grocM()">SAVE</button>
+        <button mat-raised-button *ngIf="_groc" (click)="_grocM(); updateNow()">SAVE</button>
       </mat-card-content>
     </mat-card>
 
@@ -58,9 +58,9 @@
       <mat-card-content>
         <h6>OTHERS</h6>
         <img src="assets/images/AdminModule/miscIcon.png" alt="" width="70px" height="70px"> <br>
-        <input [disabled]="!_oth" matInput class="cardInput" [(ngModel)]="newPlan.others" name="others">
+        <input [disabled]="!_oth" type="number" matInput class="cardInput" [(ngModel)]="newPlan.others" name="others">
         <button mat-raised-button *ngIf="!_oth" (click)="_othM()">EDIT</button>
-        <button mat-raised-button *ngIf="_oth" (click)="_othM()">SAVE</button>
+        <button mat-raised-button *ngIf="_oth" (click)="_othM(); updateNow()">SAVE</button>
       </mat-card-content>
     </mat-card>
 

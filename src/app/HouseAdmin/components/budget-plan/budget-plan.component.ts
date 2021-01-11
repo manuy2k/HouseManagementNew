@@ -29,7 +29,7 @@ export class BudgetPlanComponent implements OnInit {
     console.log(this.newPlan.elec);
   }
 
-  goForIt(){
+  updateNow(){
     this._bps.updatePlan(this.newPlan);
     alert("Updated Successfully");
   }

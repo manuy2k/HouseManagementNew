@@ -71,7 +71,7 @@ export class UpcomingEventsService {
       eventName:"Bike Service",
       eventDate:new Date('2020-07-26'),
       eventType:"Others",
-      eventDesc:"Oorke dhobbi thiragadam kadhu ra konchem cleaning cheyinchandi"
+      eventDesc:"Bike servicing ki ivvali kudhirinollu icheyyandi"
     }
   ];
 
